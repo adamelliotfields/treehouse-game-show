@@ -1,0 +1,42 @@
+doctype html
+
+html(lang='en')
+  head
+    meta(charset='utf-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1, shrink-to-fit=no')
+    link(href='favicon.ico', rel='icon')
+    link(href!='https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap', rel='stylesheet')
+    link(href='css/styles.css', rel='stylesheet')
+    title Wheel of Success
+
+  body
+    div.main-container
+      div.start.overlay#overlay
+        h2.title Wheel of Success
+        p Click the button to play!
+        a.btn#start Start Game
+
+      div.section
+        h2.header Wheel of Success
+
+      div.section#phrase
+        ul
+
+      div.section#qwerty
+        div.keyrow
+          each letter in ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p']
+            button= letter
+        div.keyrow
+          each letter in ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l']
+            button= letter
+        div.keyrow
+          each letter in ['z', 'x', 'c', 'v', 'b', 'n', 'm']
+            button= letter
+
+      div.section
+        ol
+          each _ in [1, 2, 3, 4, 5]
+            li.tries
+              img(src='images/liveHeart.png', alt='heart icon', width='36', height='35')
+
+    script(src='js/app.js')

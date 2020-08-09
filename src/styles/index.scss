@@ -1,0 +1,167 @@
+// Variables
+$color-white: #fff;
+$color-black: #000;
+$color-win: #78cf82;
+$color-lose: #d94545;
+$color-start: #5b85b7;
+$color-neutral: #445069;
+$color-neutral-light: #d2d2d2;
+$color-keys: #37474f;
+$color-keys-light: #e5e5e5;
+$font-size-large: 60px;
+$font-size-medium: 20px;
+$transition: all 0.2s ease-in-out;
+
+/* Main */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  justify-content: space-evenly;
+  flex-direction: column;
+  display: flex;
+  min-height: 100vh;
+  /* Montserrat Google font plus standard sans-serif system fonts. */
+  font-family: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+    'Noto Color Emoji';
+  margin: 0;
+}
+
+li,
+ol,
+ul {
+  padding: 0;
+  display: inline-block;
+}
+
+h2 {
+  margin: 0;
+  text-transform: uppercase;
+  font-size: $font-size-large;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  margin: 6px;
+  border: 1px solid transparent;
+  padding: 0.5rem 1rem;
+  color: $color-keys;
+  font-size: $font-size-medium;
+  background-color: $color-keys-light;
+  border-radius: 5px;
+  transition: $transition;
+}
+
+.main-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  max-height: 900px;
+  text-align: center;
+}
+
+.section {
+  width: 100%;
+  padding: 10px;
+}
+
+/* Title */
+.header {
+  color: $color-start;
+}
+
+/* Phrase */
+.letter {
+  font-size: $font-size-medium;
+  height: 65px;
+  width: 65px;
+  padding: 20px 1px 0 1px;
+  margin-right: 2px;
+  color: transparent;
+  background: $color-neutral-light;
+  border-radius: 5px;
+  transition: $transition;
+}
+
+.space {
+  width: 15px;
+}
+
+.show {
+  color: $color-black;
+  background-color: $color-win;
+}
+
+/* Keyboard */
+.keyrow {
+  display: flex;
+  justify-content: center;
+}
+
+.chosen {
+  background: $color-neutral;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+  color: $color-white;
+
+  &:disabled {
+    cursor: not-allowed;
+  }
+}
+
+.btn {
+  cursor: pointer;
+  padding: 8px;
+  margin: 50px auto;
+  background: $color-white;
+  border-radius: 5px;
+  font-size: $font-size-medium;
+}
+
+/* Overlay */
+.overlay {
+  display: flex;
+  flex-direction: column;
+  position: fixed;
+  color: $color-white;
+  justify-content: center;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 5px;
+}
+
+.title {
+  color: $color-white;
+}
+
+.start {
+  background-color: $color-start;
+
+  a {
+    color: $color-start;
+  }
+}
+
+.win {
+  background-color: $color-win;
+
+  a {
+    color: $color-win;
+  }
+}
+
+.lose {
+  background-color: $color-lose;
+
+  a {
+    color: $color-lose;
+  }
+}

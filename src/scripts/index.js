@@ -17,14 +17,14 @@
     'Front End Development',
     'HTML and CSS',
     'JavaScript',
-    'Responsive Web Design'
+    'Responsive Web Design',
   ];
 
   /**
    * Sets the randomPhrase variable from the phrases array.
    * @returns {void}
    */
-  var setRandomPhrase = function() {
+  var setRandomPhrase = function () {
     var previousRandomPhrase = randomPhrase;
 
     // This prevents the same phrase being played twice in a row.
@@ -37,8 +37,8 @@
    * Displays the phrase by appending list items to the phrase list.
    * @returns {void}
    */
-  var displayPhrase = function() {
-    randomPhrase.split('').forEach(function(letter) {
+  var displayPhrase = function () {
+    randomPhrase.split('').forEach(function (letter) {
       var isSpace = letter === ' ';
       var element = document.createElement('li');
 
@@ -55,7 +55,7 @@
    * @param {string} letter
    * @returns {void}
    */
-  var checkLetter = function(letter) {
+  var checkLetter = function (letter) {
     if (randomPhrase.toLowerCase().indexOf(letter) !== -1) {
       for (var i = 0; i < letters.length; i += 1) {
         var listItem = letters[i];
@@ -79,7 +79,7 @@
    * @param {Element} element
    * @returns {void}
    */
-  var disableKeyboardLetter = function(element) {
+  var disableKeyboardLetter = function (element) {
     element.className = 'chosen';
     element.disabled = true;
   };
@@ -88,12 +88,12 @@
    * Checks if the player has won or lost and displays the appropriate overlay.
    * @returns {void}
    */
-  var checkWinState = function() {
+  var checkWinState = function () {
     var displayedPhrase = '';
     var listItems = phrase.firstElementChild.children;
 
     if (missed === 5) {
-      overlay.className = 'lose';
+      overlay.className = 'lose overlay';
       overlay.children[1].innerText = 'Better luck next time!';
       overlay.children[2].innerText = 'Play Again';
       overlay.style.display = '';
@@ -115,7 +115,7 @@
     }
 
     if (displayedPhrase === randomPhrase) {
-      overlay.className = 'win';
+      overlay.className = 'win overlay';
       overlay.children[1].innerText = 'Congratulations! You won!';
       overlay.children[2].innerText = 'Play Again';
       overlay.style.display = '';
@@ -126,11 +126,12 @@
    * Resets all game state back to their initial values.
    * @returns {void}
    */
-  var reset = function() {
+  var reset = function () {
     // Reset the missed counter.
     missed = 0;
 
     // Reset the overlay.
+    overlay.className = 'start overlay';
     overlay.children[1].innerText = 'Click the button to play!';
     overlay.children[2].innerText = 'Start Game';
 
@@ -165,7 +166,7 @@
   };
 
   // Add a keypress handler so we can use a real keyboard.
-  document.body.addEventListener('keypress', function(event) {
+  document.body.addEventListener('keypress', function (event) {
     for (var i = 0; i < qwertyButtons.length; i += 1) {
       var button = qwertyButtons[i];
 
