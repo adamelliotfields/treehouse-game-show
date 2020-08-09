@@ -12,52 +12,28 @@
   <img src="https://img.shields.io/badge/-js-f7df1e?logo=javascript&logoColor=fff" alt="javascript badge" />
 </h3>
 
-## About
-
-The sixth unit demonstrates using JavaScript DOM traversal, manipulation, and events to create an
-interactive "Wheel of Fortune" clone.
-
-The HTML and CSS code must pass W3C validation and the JavaScript code must pass JSHint linting.
-
 ## Installation
 
 ```bash
-git clone --single-branch -b master https://github.com/adamelliotfields/treehouse-game-show.git
+git clone --single-branch -b dev https://github.com/adamelliotfields/treehouse-game-show.git
 ```
 
-## Usage
-
-You can view hosted site [here](https://adamelliotfields.github.io/treehouse-game-show/index.html).
-
-You can also simply open `index.html` in your browser directly. For example, if your macOS user name
-is `adam` and you cloned the repo in `~/Downloads`, then go to
-`file:///Users/adam/Downloads/treehouse-game-show/index.html` in your web browser.
-
-Finally, you can also use PHP or Python's built-in HTTP server by running one of these commands in
-the same directory as `index.html`.
+## Development
 
 ```bash
-# PHP
-php -S localhost:8000
+# Install dependencies.
+npm install
 
-# Python 2
-python -m SimpleHTTPServer
+# Run the live reload server.
+npm start
 
-# Python 3
-python3 -m http.server
+# Build assets without running the server.
+npm run build
 ```
 
-## Validating HTML and CSS
+## Deployment
 
-Use the [W3C HTML](https://validator.w3.org/#validate_by_input) and
-[W3C CSS](https://jigsaw.w3.org/css-validator/#validate_by_input) validators.
+The `dist` folder is actually the `master` branch of this repository. This works using Git
+[worktrees](https://git-scm.com/docs/git-worktree).
 
-## Linting JavaScript
-
-Use [JSHint](https://jshint.com) to lint [`app.js`](./js/app.js).
-
-## Browser Compatibility
-
-- Chrome 84
-- Firefox 79
-- Safari 13
+After building, `cd` into `dist`, commit any changes, and push to `master`.
