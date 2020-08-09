@@ -1,8 +1,4 @@
 .idea/
-.vscode/
-node_modules/
-src/
 .DS_Store
-Gulpfile.js
-package.json
-package-lock.json
+dist/
+node_modules/
